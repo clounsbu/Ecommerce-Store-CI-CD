@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Logout page > matches the logout UI snapshot 1`] = `
+<div>
+  Logging out...
+</div>
+`;
