@@ -19,7 +19,7 @@ jobs:
 
       #Step 2: setup Node.js
       - name: Set up Node.js
-        uses: action/setup-node@v3
+        uses: actions/setup-node@v3
         with:
           node-version: "20"
 
