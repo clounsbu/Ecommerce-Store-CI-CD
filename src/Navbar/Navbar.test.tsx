@@ -1,18 +1,18 @@
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "@jest/globals";
 import Navbar from "./Navbar";
 import { useAuth } from "../context/AuthContext";
 
-vi.mock("../context/AuthContext", () => ({
-  useAuth: vi.fn(),
+jest.mock("../context/AuthContext", () => ({
+  useAuth: jest.fn(),
 }));
 
 describe("Navbar", () => {
   it("shows profile and logout links for signed-in users", () => {
-    vi.mocked(useAuth).mockReturnValue({
+    (useAuth as jest.Mock).mockReturnValue({
       user: { uid: "1", email: "test@example.com" } as any,
-      setUser: vi.fn(),
+      setUser: jest.fn(),
     });
 
     render(
