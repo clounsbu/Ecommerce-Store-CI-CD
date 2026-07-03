@@ -1,21 +1,24 @@
 import { render, screen, waitFor } from "@testing-library/react";
-import { describe, expect, it, beforeEach } from "@jest/globals";
+import { describe, expect, it, vi, beforeEach } from "vitest";
 import Logout from "../pages/Logout";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebaseConfig";
 
-const navigate = jest.fn();
+const navigate = vi.fn();
 
-jest.mock("firebase/auth", () => ({
-  signOut: jest.fn(),
+vi.mock("firebase/auth", () => ({
+  signOut: vi.fn(),
 }));
 
-jest.mock("../firebaseConfig", () => ({
+vi.mock("../firebaseConfig", () => ({
   auth: {},
 }));
 
-jest.mock("react-router-dom", () => {
-  const actual = jest.requireActual("react-router-dom");
+vi.mock("react-router-dom", async () => {
+  const actual =
+    await vi.importActual<typeof import("react-router-dom")>(
+      "react-router-dom",
+    );
 
   return {
     ...actual,
@@ -25,7 +28,7 @@ jest.mock("react-router-dom", () => {
 
 describe("Logout page", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it("signs the user out and redirects home", async () => {
