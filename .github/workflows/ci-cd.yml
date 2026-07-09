@@ -58,4 +58,4 @@ jobs:
       - name: Deploy to Vercel
         run: |
           npm install -g vercel
-          vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }} # Ensure you have set the VERCEL_TOKEN secret in your repository settings
+          vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN_1 }} # Ensure you have set the VERCEL_TOKEN secret in your repository settings
