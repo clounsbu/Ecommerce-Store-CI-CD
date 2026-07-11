@@ -1,7 +1,7 @@
 # Ecommerce-Store-CI-CD
 
 ## Technologies used
-- This project was created using HTML, CSS, JavaScript, React, Typescript, React Query, React bootstrap, Firebase, bootstrap,CI/CD, and Redux. 
+- This project was created using HTML, CSS, JavaScript, React, Typescript, React Query, React bootstrap, Firebase, bootstrap,CI/CD, and Redux. new
 
 ## Installation & setup
 1. Click the link to open up my GitHub page. 
